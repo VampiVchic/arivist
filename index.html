@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Аривист — 30+ лет в международной логистике: закупки, перевозки, таможенное оформление.">
+  <title>Аривист — международная логистика</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__top container">
+      <div class="header__left">
+        <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false"
+          aria-controls="site-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <button class="header__search" type="button" aria-label="Поиск">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="7.5" cy="7.5" r="6" stroke="currentColor" stroke-width="1.5" />
+            <path d="M12 12l5 5" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+        </button>
+      </div>
+
+      <a class="header__logo" href="/" aria-label="Аривист — на главную">
+        <img src="img/svg/Logo.svg" alt="" class="header__logo-icon">
+      </a>
+
+      <div class="header__right">
+        <p class="header__tagline">Аривист. 30+ лет<br>в международной логистике</p>
+        <a class="header__phone" href="tel:+78007754243">8 800 775 4243</a>
+        <div class="header__lang" data-dropdown>
+          <button class="header__lang-btn" type="button" aria-expanded="false">RU <span class="arrow">↓</span></button>
+          <ul class="header__lang-list">
+            <li><a href="#" class="is-active">RU</a></li>
+            <li><a href="#">EN</a></li>
+            <li><a href="#">TR</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <nav class="header__nav container">
+      <div class="header__services" data-dropdown>
+        <button class="header__nav-btn" type="button" aria-expanded="false">Услуги <span class="arrow">↓</span></button>
+        <ul class="header__dropdown">
+          <li><a href="#">Спецпред — Сервис в Турции</a></li>
+          <li><a href="#">Закупки</a></li>
+          <li><a href="#">Международные перевозки</a></li>
+          <li><a href="#">Таможенное оформление</a></li>
+          <li><a href="#">Сертификация</a></li>
+          <li><a href="#">Юридическое сопровождение</a></li>
+        </ul>
+      </div>
+
+      <button class="header__nav-btn" type="button" data-modal-open="request">Оставить заявку <span
+          class="arrow">↓</span></button>
+
+      <a class="header__nav-link" href="#offices">Контакты <span class="arrow">→</span></a>
+    </nav>
+  </header>
+
+  <div class="menu" id="site-menu" hidden>
+    <div class="menu__panel">
+      <button class="menu__close" type="button" aria-label="Закрыть меню">
+        <svg width="28" height="28" viewBox="0 0 28 28">
+          <path d="M2 2l24 24M26 2L2 26" stroke="currentColor" stroke-width="1.5" />
+        </svg>
+      </button>
+      <p class="menu__title">Меню</p>
+      <div class="menu__col">
+        <p class="menu__heading">Услуги</p>
+        <ul>
+          <li><a href="#">Спецпред — Сервис в Турции</a></li>
+          <li><a href="#">Закупки</a></li>
+          <li><a href="#">Международные перевозки</a></li>
+          <li><a href="#">Таможенное оформление</a></li>
+          <li><a href="#">Сертификация</a></li>
+          <li><a href="#">Юридическое сопровождение</a></li>
+        </ul>
+      </div>
+      <div class="menu__col">
+        <p class="menu__heading">О компании</p>
+        <ul>
+          <li><a href="#">Факты и цифры</a></li>
+          <li><a href="#">Организации</a></li>
+          <li><a href="#">Медиа</a></li>
+        </ul>
+      </div>
+      <div class="menu__col">
+        <p class="menu__heading">Контакты</p>
+        <ul>
+          <li><a href="#">Адреса и телефоны офисов в России и мире</a></li>
+        </ul>
+      </div>
+      <div class="menu__col">
+        <p class="menu__heading">Справочник</p>
+        <ul>
+          <li><a href="#">Новости</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Вакансии (hh.ru)</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ====== 1. ПЕРВЫЙ ЭКРАН (море) ====== -->
+    <section class="hero">
+      <h1 class="visually-hidden">ГК Аривист — 30+ лет в международной логистике</h1>
+      <img class="hero__img" src="img/header/v1.jpg" alt="">
+
+      <!-- маячки -->
+      <svg class="hero__beacons" viewBox="0 0 1375 542" fill="none" xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true">
+
+        <!-- маска: «стирает» линии под кораблём, чтобы не пересекали -->
+        <defs>
+          <mask id="ship-cut">
+            <rect width="1375" height="542" fill="#fff" />
+            <g transform="translate(220, 220)" stroke="#000" stroke-width="14" fill="#000" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M8.48315 21.6201V6.313C8.48315 3.34109 10.8462 0.930942 13.7622 0.930942H59.9822C62.8972 0.930942 63.8812 2.88843 62.1792 5.30163L50.6752 21.6201" />
+              <path
+                d="M0.930908 21.0776C0.930908 24.963 4.02591 28.1123 7.84291 28.1123C11.6609 28.1123 14.7559 24.963 14.7559 21.0776" />
+              <path
+                d="M15.3076 21.0776C15.3076 24.963 18.4026 28.1123 22.2196 28.1123C26.0376 28.1123 29.1326 24.963 29.1326 21.0776" />
+              <path
+                d="M29.7029 21.0776C29.7029 24.963 32.7979 28.1123 36.6149 28.1123C40.4329 28.1123 43.5279 24.963 43.5279 21.0776" />
+              <path
+                d="M44.0979 21.0776C44.0979 24.963 47.1929 28.1123 51.0099 28.1123C54.8279 28.1123 57.9229 24.963 57.9229 21.0776" />
+            </g>
+          </mask>
+        </defs>
+
+        <!-- линии созвездия, с маской -->
+        <path fill="#fff" mask="url(#ship-cut)"
+          d="M401.945 0.0508492C402.098 -0.0238238 402.279 -0.0159116 402.425 0.0723336L665.214 160.032L950.966 36.0411C951.118 35.975 951.295 35.9888 951.435 36.0782L1154.43 165.648L1256.95 117.048C1257.18 116.939 1257.46 117.02 1257.59 117.236L1374.59 306.236C1374.71 306.435 1374.68 306.692 1374.52 306.856C1374.48 306.896 1374.43 306.929 1374.38 306.952C1374.4 307.165 1374.28 307.373 1374.07 307.458L834.358 531.962C834.158 532.045 833.932 531.989 833.792 531.833L833.738 531.76L773.634 432.992C773.548 433.008 773.458 433.001 773.373 432.971L773.291 432.932L772.9 432.704L253.094 540.989C253.04 541 252.986 541.003 252.933 540.996L252.138 541.777C252.032 541.882 251.884 541.933 251.736 541.918C251.626 541.907 251.523 541.859 251.443 541.784L251.372 541.7L14.7501 190.275C14.6436 190.117 14.6388 189.913 14.7326 189.749C14.684 189.665 14.6593 189.566 14.6662 189.466C14.6784 189.288 14.785 189.129 14.9454 189.051L401.945 0.0508492ZM251.865 540.643L252.645 539.877L297.16 378.735L16.3908 190.922L251.865 540.643ZM254.216 539.734L771.612 431.951L520.296 284.969L514.565 283.897L254.216 539.734ZM254.068 538.479L513.366 283.673L333.737 250.081L254.068 538.479ZM774.434 432.384L834.368 530.874L1368.81 308.563L774.434 432.384ZM772.672 431.412L704.521 319.42L523.207 285.513L772.672 431.412ZM773.812 431.361L842.442 345.212L796.197 336.565L795.379 336.952C795.185 337.044 794.954 337.001 794.805 336.847C794.661 336.697 794.626 336.474 794.714 336.287L705.841 319.667L773.812 431.361ZM885.605 294.184L1023.42 378.073C1023.63 378.199 1023.72 378.453 1023.63 378.679C1023.55 378.904 1023.31 379.036 1023.07 378.991L843.554 345.42L775.219 431.199L1373.38 306.591L1154.35 166.789L885.605 294.184ZM883.624 295.122L844.259 344.535L1020.57 377.507L884.524 294.695L883.624 295.122ZM296.768 377.27L248.798 234.196L18.4982 191.129L296.768 377.27ZM297.681 376.85L332.751 249.897L249.923 234.406L297.681 376.85ZM797.736 335.835L843.147 344.327L881.571 296.095L797.736 335.835ZM796.294 335.411L882.988 294.316L883.286 293.942L833.589 263.691L796.294 335.411ZM621.028 180.295L705.143 318.52L795.194 335.359L832.734 263.171L665.138 161.156L621.028 180.295ZM619.498 180.959C619.427 180.99 619.351 181.002 619.276 180.999L516.758 281.741L520.651 284.018L703.822 318.273L620.103 180.697L619.498 180.959ZM1155.42 166.283L1372.59 304.898L1256.98 118.144L1155.42 166.283ZM884.539 293.535L884.582 293.561L1153.36 166.153L951.475 37.2911L884.539 293.535ZM834.051 262.803L883.649 292.992L949.558 40.6729L834.051 262.803ZM515.435 283.042L517.739 283.473L516.02 282.467L515.435 283.042ZM334.005 249.113L514.236 282.818L515.125 281.944L351.389 186.184L334.005 249.113ZM351.664 185.187L515.863 281.218L618.43 180.429L402.442 1.37897L351.664 185.187ZM666.26 160.669L833.195 262.281L950.071 37.5206L666.26 160.669ZM249.559 233.321L333.019 248.929L350.496 185.661L205.062 100.605L249.559 233.321ZM16.1662 189.568L16.3869 189.716L248.435 233.11L203.692 99.6592C203.625 99.4619 203.688 99.2438 203.85 99.1124C204.011 98.9811 204.237 98.9636 204.417 99.0684L350.772 184.664L401.388 1.43659L16.1662 189.568ZM619.147 179.725L619.657 179.223C619.766 179.116 619.918 179.064 620.069 179.083C620.221 179.102 620.356 179.189 620.436 179.319L620.504 179.433L664.091 160.519L407.768 4.49616L619.147 179.725Z" />
+
+
+        <!-- кружки маячков -->
+        <circle data-id="a" cx="15" cy="188.6" r="15" fill="#fff" />
+        <circle data-id="b" cx="623.6" cy="179.1" r="5" fill="#fff" />
+        <circle data-id="c" cx="518.7" cy="281.9" r="8" fill="#fff" />
+        <circle data-id="d" cx="708.6" cy="318.6" r="8" fill="#fff" />
+        <circle data-id="e" cx="795.7" cy="336.4" r="8" fill="#fff" />
+        <circle data-id="f" cx="1024.2" cy="378.9" r="15" fill="#fff" />
+        <circle data-id="g" cx="300.8" cy="376.9" r="8" fill="#fff" />
+
+        <!-- линия от точки к кораблю -->
+        <line x1="140" y1="320" x2="250" y2="245" stroke="#fff" stroke-width="1" mask="url(#ship-cut)" />
+
+        <!-- точка слева от корабля (к ней идёт линия) -->
+        <circle cx="140" cy="320" r="5" fill="#fff" />
+
+        <!-- подпись под точкой -->
+
+        <text x="140" y="345" fill="#fff" font-size="12" font-family="IBM Plex Mono, monospace">Работаем со всеми</text>
+        <text x="140" y="361" fill="#fff" font-size="12" font-family="IBM Plex Mono, monospace">видами грузов</text>
+
+        <!-- кораблик с волнами -->
+        <g data-id="ship" transform="translate(220, 220)">
+          <path
+            d="M8.48315 21.6201V6.313C8.48315 3.34109 10.8462 0.930942 13.7622 0.930942H59.9822C62.8972 0.930942 63.8812 2.88843 62.1792 5.30163L50.6752 21.6201"
+            stroke="white" stroke-width="1.862" />
+          <path
+            d="M0.930908 21.0776C0.930908 24.963 4.02591 28.1123 7.84291 28.1123C11.6609 28.1123 14.7559 24.963 14.7559 21.0776"
+            stroke="white" stroke-width="1.862" stroke-linecap="round" />
+          <path
+            d="M15.3076 21.0776C15.3076 24.963 18.4026 28.1123 22.2196 28.1123C26.0376 28.1123 29.1326 24.963 29.1326 21.0776"
+            stroke="white" stroke-width="1.862" stroke-linecap="round" />
+          <path
+            d="M29.7029 21.0776C29.7029 24.963 32.7979 28.1123 36.6149 28.1123C40.4329 28.1123 43.5279 24.963 43.5279 21.0776"
+            stroke="white" stroke-width="1.862" stroke-linecap="round" />
+          <path
+            d="M44.0979 21.0776C44.0979 24.963 47.1929 28.1123 51.0099 28.1123C54.8279 28.1123 57.9229 24.963 57.9229 21.0776"
+            stroke="white" stroke-width="1.862" stroke-linecap="round" />
+        </g>
+      </svg>
+
+
+
+
+      <a class="hero__scroll" href="#cargo" aria-label="Листать вниз">
+        <img src="img/svg/arrow_down.svg" alt="">
+      </a>
+    </section>
+
+    <!-- ====== 2. SPECIAL ====== -->
+    <section class="special" id="special">
+      <div class="container">
+        <!-- левое меню разделов (пока статично, скролл-спай — этап 2) -->
+        <nav class="side-nav" aria-label="Разделы страницы">
+          <a href="#special" class="is-active">Special</a>
+          <a href="#services">Услуги</a>
+          <a href="#orgs">Организации</a>
+          <a href="#cases">Кейсы</a>
+          <a href="#news">Новости</a>
+          <a href="#clients">Клиенты</a>
+          <a href="#offices">Офисы</a>
+        </nav>
+
+        <div class="container">
+          <h2 class="special__title">Специальное предложение:<br>из Турции&nbsp; за 20 дней</h2>
+          <div class="special__cols">
+            <p class="special__note">Отправка из порта Измир</p>
+            <div class="special__text">
+              <p>С 29.09.2026 по 31.10.2026 выпуск вашего груза происходит по ускоренной процедуре.</p>
+              <a href="#" data-modal-open="request">Свяжитесь с нашим менеджером для уточнения условий</a>
+            </div>
+          </div>
+        </div>
+        <!-- лампочка темы -->
+        <button class="theme-toggle" type="button" aria-label="Переключить тему">
+          <img src="img/svg/sun.svg" alt="">
+        </button>
+      </div>
+    </section>
+
+
+
+    <!-- ====== 3. ВИДЕО (пока статика) ====== -->
+    <section class="media">
+      <img class="media__img" src="img/castle.jpg" alt="Стамбул, Айя-София">
+      <button class="media__play" type="button" aria-label="Смотреть видео">
+        <svg width="48" height="48" viewBox="0 0 48 48">
+          <path d="M16 10l24 14-24 14z" fill="#fff" />
+        </svg>
+      </button>
+    </section>
+
+
+
+
+    <!-- ====== 4. УСЛУГИ ====== -->
+    <section class="services" id="services">
+      <div class="container">
+        <nav class="side-nav" aria-label="Разделы страницы">
+          <a href="#special">Special</a>
+          <a href="#services" class="is-active">Услуги</a>
+          <a href="#orgs">Организации</a>
+          <a href="#cases">Кейсы</a>
+          <a href="#news">Новости</a>
+          <a href="#clients">Клиенты</a>
+          <a href="#offices">Офисы</a>
+        </nav>
+
+        <div class="services__grid">
+          <a class="services__item" href="#">
+            <h3>Закупки</h3>
+            <p class="services__desc"></p>
+          </a>
+          <a class="services__item" href="#">
+            <h3>Международные перевозки</h3>
+            <p class="services__desc"></p>
+          </a>
+          <a class="services__item" href="#">
+            <h3>Таможенное оформление</h3>
+            <p class="services__desc">Импорт, экспорт, транзит, склад, реимпорт/реэкспорт, уничтожение</p>
+          </a>
+          <a class="services__item" href="#">
+            <h3>Сертификация</h3>
+            <p class="services__desc"></p>
+          </a>
+          <a class="services__item" href="#">
+            <h3>Статус УЭО</h3>
+            <p class="services__desc"></p>
+          </a>
+          <a class="services__item" href="#">
+            <h3>Юридическое сопровождение</h3>
+            <p class="services__desc"></p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== 5. ОРГАНИЗАЦИИ ====== -->
+    <section class="orgs" id="orgs">
+      <img class="orgs__img" src="img/people.jpg" alt="Конференция ВЭД">
+
+      <div class="container orgs__inner">
+        <nav class="side-nav" aria-label="Разделы страницы">
+          <a href="#special">Special</a>
+          <a href="#services">Услуги</a>
+          <a href="#orgs" class="is-active">Организации</a>
+          <a href="#cases">Кейсы</a>
+          <a href="#news">Новости</a>
+          <a href="#clients">Клиенты</a>
+          <a href="#offices">Офисы</a>
+        </nav>
+
+        <div class="orgs__content">
+          <p class="orgs__text">ГК Аривист входит в состав Гильдии профессиональных участников ВЭД «Гермес», Деловой
+            России, Промышленного кластера Республики Татарстан</p>
+          <p class="orgs__more">Больше — в разделе <a href="#">О компании</a></p>
+        </div>
+      </div>
+    </section>
+
+<!-- ====== 6. КЕЙСЫ ====== -->
+<section class="cases" id="cases">
+  <div class="container">
+    <div class="cases__top">
+    <nav class="side-nav" aria-label="Разделы страницы">
+      <a href="#special">Special</a>
+      <a href="#services">Услуги</a>
+      <a href="#orgs">Организации</a>
+      <a href="#cases" class="is-active">Кейсы</a>
+      <a href="#news">Новости</a>
+      <a href="#clients">Клиенты</a>
+      <a href="#offices">Офисы</a>
+    </nav>
+
+    <h2 class="cases__title">Кейсы</h2>
+
+    <div class="cases__row">
+      <a class="case" href="#">
+        <div class="case__box">
+          <img class="case__icon" src="img/svg/time.svg" alt="">
+          <img class="case__photo" src="img/4.jpg" alt="">
+        </div>
+        <h3 class="case__name">Счёт на часы</h3>
+      </a>
+
+      <a class="case" href="#">
+        <div class="case__box">
+          <img class="case__icon" src="img/svg/circle.svg" alt="">
+          <img class="case__photo" src="img/railway.jpg" alt="">
+        </div>
+        <h3 class="case__name">Мука на экспорт</h3>
+      </a>
+
+      <a class="case" href="#">
+        <div class="case__box">
+          <img class="case__icon" src="img/svg/umbrella.svg" alt="">
+          <img class="case__photo" src="img/non.jpg" alt="">
+        </div>
+        <h3 class="case__name">Почувствовать себя пилотом</h3>
+      </a>
+    </div>
+</div>
+    <!-- продолжение кейсов: тексты -->
+    <div class="cases__bottom">
+      <nav class="side-nav" aria-label="Разделы страницы">
+        <a href="#special">Special</a>
+        <a href="#services">Услуги</a>
+        <a href="#orgs">Организации</a>
+        <a href="#cases" class="is-active">Кейсы</a>
+        <a href="#news">Новости</a>
+        <a href="#clients">Клиенты</a>
+        <a href="#offices">Офисы</a>
+      </nav>
+
+      <div class="cases__details">
+        <article class="case-detail">
+          <img class="case-detail__icon" src="img/svg/time.svg" alt="">
+          <h3>Счёт на часы</h3>
+          <p>ГК АРИВИСТ успешно справилась с таможенным оформлением 17 000 суточных индюшат, привезенных из Германии. Основная задача состояла в том, чтобы организовать и провести процедуру таможенного оформления и прохождение ветеринарного контроля, максимально быстро. Кроме того, индюшат нужно было кормить каждые два часа!</p>
+          <p>Перед отправкой специалисты компании проконсультировали собственника…</p>
+        </article>
+
+        <article class="case-detail">
+          <img class="case-detail__icon" src="img/svg/circle.svg" alt="">
+          <h3>Мука на экспорт</h3>
+          <p>Сотрудники Южного поста ГК АРИВИСТ в рамках Всемирной продовольственной программы ООН оформили на экспорт более 3 тыс. тонн пшеничной муки. Мука загружалась в вагоны на территории хлебокомбината в Санкт-Петербурге и следовала ж/д путями до Таджикистана. И в этот раз ГК АРИВИСТ успешно справилась с таможенным оформлением жизненно необходимого груза, и мы рады, что стали частью такого проекта.</p>
+          <img class="case-detail__logo" src="img/svg/wfp.svg" alt="Всемирная продовольственная программа ООН">
+        </article>
+
+        <article class="case-detail">
+          <img class="case-detail__icon" src="img/svg/umbrella.svg" alt="">
+          <h3>Почувствовать себя пилотом</h3>
+          <p>В ноябре 2014 г. ГК АРИВИСТ успешно осуществила доставку и таможенное оформление Boeing 737NG, построенного на базе авиатренажеров, используемых для обучения и тренировки пилотов гражданской авиации.</p>
+          <p>Тренажер был сконструирован и собран в Италии. Именно оттуда специалисты ГК доставили в Россию, а затем провели таможенное оформление необычного…</p>
+        </article>
+
+        <a class="cases__more" href="#">Ещё</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 7. НОВОСТИ ====== -->
+<section class="news" id="news">
+  <div class="container">
+    <nav class="side-nav" aria-label="Разделы страницы">
+      <a href="#special">Special</a>
+      <a href="#services">Услуги</a>
+      <a href="#orgs">Организации</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#news" class="is-active">Новости</a>
+      <a href="#clients">Клиенты</a>
+      <a href="#offices">Офисы</a>
+    </nav>
+
+    <h2 class="news__title">Новости</h2>
+
+    <div class="news__list">
+      <article class="news-item">
+        <button class="news-item__head" type="button">
+          <img class="news-item__thumb" src="img/4.jpg" alt="">
+          <div class="news-item__info">
+            <p class="news-item__meta">27 мая 2026 <span>#события</span></p>
+            <h3>АРИВИСТ ГК на Заседании совместной рабочей группы Общественного совета при ФТС и Общественного совета при ФНС</h3>
+          </div>
+          <span class="news-item__arrow">↓</span>
+        </button>
+        <div class="news-item__body">
+          <p>Давно выяснено, что при оценке дизайна и композиции чтение осмысленного текста мешает сосредоточиться. Место под реальный текст новости о заседании рабочей группы.</p>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <button class="news-item__head" type="button">
+          <span class="news-item__thumb">Вебинар</span>
+          <div class="news-item__info">
+            <p class="news-item__meta">25 мая 2026 <span>#новости</span></p>
+            <h3>Валютные ограничения в 2026 году: как бизнесу проводить сделки без рисков?</h3>
+          </div>
+          <span class="news-item__arrow">↓</span>
+        </button>
+        <div class="news-item__body">
+          <p>Давно выяснено, что при оценке дизайна и композиции чтение осмысленного текста мешает сосредоточиться. Место под реальный текст новости о вебинаре.</p>
+        </div>
+      </article>
+    </div>
+
+    <a class="news__all" href="#">Все новости</a>
+  </div>
+</section>
+
+
+<!-- ====== 8. КЛИЕНТЫ ====== -->
+<section class="clients" id="clients">
+  <div class="container">
+    <nav class="side-nav" aria-label="Разделы страницы">
+      <a href="#special">Special</a>
+      <a href="#services">Услуги</a>
+      <a href="#orgs">Организации</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#news">Новости</a>
+      <a href="#clients" class="is-active">Клиенты</a>
+      <a href="#offices">Офисы</a>
+    </nav>
+
+    <h2 class="clients__title">С нами работают</h2>
+
+    <div class="clients__grid">
+      <div class="client">
+        <img class="client__logo" src="img/svg/heli_v1.svg" alt="HELI">
+        <img class="client__logo client__logo--hover" src="img/svg/heli_v2.svg" alt="">
+      </div>
+      <div class="client">
+        <img class="client__logo" src="img/svg/aquaphor_v1.svg" alt="АКВАФОР">
+        <img class="client__logo client__logo--hover" src="img/svg/aquaphor_v2.svg" alt="">
+      </div>
+      <div class="client">
+        <img class="client__logo" src="img/svg/felo_v1.svg" alt="felo">
+        <img class="client__logo client__logo--hover" src="img/svg/felo_v2.svg" alt="">
+      </div>
+      <div class="client">
+        <img class="client__logo" src="img/svg/ashan_v1.svg" alt="Ашан">
+        <img class="client__logo client__logo--hover" src="img/svg/ashan_v2.svg" alt="">
+      </div>
+      <div class="client">
+        <img class="client__logo" src="img/svg/felo_v1.svg" alt="felo">
+        <img class="client__logo client__logo--hover" src="img/svg/felo_v2.svg" alt="">
+      </div>
+      <div class="client">
+        <img class="client__logo" src="img/svg/heli_v1.svg" alt="HELI">
+        <img class="client__logo client__logo--hover" src="img/svg/heli_v2.svg" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====== 9. ОФИСЫ + ПОДВАЛ ====== -->
+<section class="offices" id="offices">
+  <div class="container">
+    <nav class="side-nav" aria-label="Разделы страницы">
+      <a href="#special">Special</a>
+      <a href="#services">Услуги</a>
+      <a href="#orgs">Организации</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#news">Новости</a>
+      <a href="#clients">Клиенты</a>
+      <a href="#offices" class="is-active">Офисы</a>
+    </nav>
+
+    <h2 class="offices__title">Офисы</h2>
+
+    <div class="offices__row">
+      <div class="office">
+        <img class="office__pin office__pin--mono" src="img/svg/pin_spb.svg" alt="">
+        <p>Санкт-Петербург<br>ул. Галсальская, 5</p>
+      </div>
+      <div class="office">
+        <img class="office__pin office__pin--mono" src="img/svg/pin_msk.svg" alt="">
+        <p>Москва<br>ул. Мясницкая, 40, стр. 1</p>
+        <a href="tel:+74952294277">+7 (495) 229-42-77</a>
+      </div>
+      <div class="office">
+        <img class="office__pin" src="img/svg/pin_stb.svg" alt="">
+        <p>Стамбул<br>Saray Mah. Küçüksu Cad.<br>Antasya Sitesi, 64B</p>
+      </div>
+    </div>
+
+    <a class="offices__all" href="#">Все офисы</a>
+
+    <footer class="footer">
+      <p>© 2026</p>
+      <div class="footer__links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Правила обработки персональных данных</a>
+      </div>
+    </footer>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+  </main>
+
+
+
+
+
+  <!-- модальное окно заявки -->
+  <div class="modal" id="modal-request" hidden>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" aria-label="Закрыть">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <path d="M4 4l32 32M36 4L4 36" stroke="currentColor" stroke-width="1.5" />
+        </svg>
+      </button>
+
+      <h2 class="modal__title">Заявка</h2>
+      <p class="modal__note">* поля обязательные для заполнения</p>
+
+      <form class="modal__form" action="#" novalidate>
+        <div class="modal__row">
+          <label class="modal__field">
+            <span class="modal__label">Имя Фамилия *</span>
+            <input class="modal__input" type="text" name="name" required>
+          </label>
+          <label class="modal__field">
+            <span class="modal__label">Компания</span>
+            <input class="modal__input" type="text" name="company">
+          </label>
+        </div>
+
+        <div class="modal__row">
+          <label class="modal__field">
+            <span class="modal__label">Контактный телефон или e-mail *</span>
+            <input class="modal__input" type="text" name="contact" required>
+          </label>
+          <label class="modal__field">
+            <span class="modal__label">Сфера деятельности</span>
+            <input class="modal__input" type="text" name="industry">
+          </label>
+        </div>
+
+        <div class="modal__row modal__row--bottom">
+          <label class="modal__field">
+            <span class="modal__label">Сфера деятельности *</span>
+            <textarea class="modal__textarea" name="message" required></textarea>
+          </label>
+
+          <div class="modal__agree">
+            <input class="modal__check" type="checkbox" name="consent" required>
+            <p class="modal__consent">Я ознакомился с <a href="#">Политикой конфиденциальности</a> и даю согласие на
+              обработку персональных данных</p>
+            <button class="modal__submit" type="submit" disabled>Отправить</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>
