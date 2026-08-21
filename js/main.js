@@ -1,13 +1,3 @@
-// клик мимо — закрываем все дропдауны
-document.addEventListener('click', e => {
-  if (!e.target.closest('[data-dropdown]')) {
-    dropdowns.forEach(box => {
-      box.classList.remove('is-open');
-      box.querySelector(':scope > button').setAttribute('aria-expanded', 'false');
-    });
-  }
-});
-
 // ===== БУРГЕР-МЕНЮ =====
 const menu = document.getElementById('site-menu');
 const burger = document.querySelector('.header__burger');
