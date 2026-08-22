@@ -353,8 +353,8 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 .cases__row { display: flex; justify-content: center; gap: 32px; }
 .case {
   position: relative;
-  width: 400px;
-  flex: 0 0 340px;
+  width: 296px;
+  flex: 0 0 296px; 
   transition: transform .6s ease;    /* ← додавить к тому, что есть */
 }
 .case__box {
