@@ -35,22 +35,24 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 
 /* ===== ОБЩИЕ ПАТТЕРНЫ СЕКЦИЙ ===== */
 .special, .services, .cases, .news, .clients, .offices { background: var(--c-white); }
-.services, .news, .clients { padding: 120px 0; }
+.services, .news, .clients { padding: 330px 0;}
 .special .container, .services .container, .news .container,
 .clients .container, .offices .container { position: relative; }
 
 /* левое залипшее меню разделов */
 .side-nav {
   position: fixed;
-  left: max(40px, calc((100vw - 1400px) / 2 + 40px));
+  left: 150px;                 /* было у края контейнера — теперь у края экрана */
   top: 50%;
   transform: translateY(-50%);
   z-index: 90;
   display: flex; flex-direction: column; gap: 8px;
   font-family: var(--font-mono);
-  font-size: 14px; line-height: 130%;
+  font-size: 18px; line-height: 117%;
+  letter-spacing: -0.01em;
   transition: opacity .4s;
 }
+
 .side-nav.is-hidden { opacity: 0; pointer-events: none; }
 .side-nav a { color: var(--c-gray); }
 .side-nav a.is-active { color: var(--c-black); }
@@ -58,13 +60,13 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 
 /* заголовки секций */
 .cases__title, .news__title, .clients__title {
-  font: 400 36px var(--font-main); text-align: center; margin-bottom: 60px;
+  font: 400 60px var(--font-main); text-align: center; margin-bottom: 60px;
 }
-.offices__title { font: 400 36px var(--font-main); text-align: center; margin-bottom: 90px; }
+.offices__title { font: 400 60px var(--font-main); text-align: center; margin-bottom: 90px; }
 
 /* серые ссылки «все / подробнее» */
 .special__text a, .news__all, .offices__all {
-  font-family: var(--font-mono); font-size: 12px;
+  font-family: var(--font-mono); font-size: 18px;
   color: var(--c-gray); text-decoration: underline;
 }
 .news__all, .offices__all { display: block; width: max-content; margin: 40px auto 0; }
@@ -81,7 +83,7 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
   position: absolute; top: 15px; left: 0; right: 0; z-index: 100;
   background: transparent;
   color: var(--c-hero);
-  font-family: var(--font-mono); font-size: 20px;
+  font-family: var(--font-mono); font-size: 24px;
   line-height: 130%;
 }
 
@@ -111,9 +113,9 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 .header__logo:hover .header__logo-icon { animation: spin 9s linear infinite; }
 @keyframes spin { to { transform: rotate(1turn); } }
 
-.header__tagline { font-size: 14px; line-height: 130%; margin-right:-40px ; }
-.header__phone { font-size: 20px; white-space: nowrap; margin-left: 140px; margin-right: -20px; }  /* ← твоя ручка */
-.header__lang { white-space: nowrap; margin-left: 70px; }                     /* ← твоя ручка */
+.header__tagline { font-size: 18px; line-height: 130%; margin-right:-40px ; }
+.header__phone { white-space: nowrap; margin-left: 140px; margin-right: -25px; }  /* ← твоя ручка */
+.header__lang { white-space: nowrap; margin-left: 40px; }                     /* ← твоя ручка */
 
 /* языки и услуги — единый паттерн дропдауна */
 [data-dropdown] { position: relative; }
@@ -138,7 +140,7 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
   margin-top: 24px;
   min-height: 27px;
 }
-.header__nav [data-modal-open="request"] { margin-left: 524px; }
+.header__nav [data-modal-open="request"] { margin-left: 475px; }
 
 .header__nav-btn, .header__nav-link { position: relative; padding: 0; }
 .header__nav-btn::after, .header__nav-link::after {
@@ -221,6 +223,40 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 [data-theme="dark"] .modal__submit { border-color: var(--c-white); color: var(--c-white); }
 [data-theme="dark"] .modal__submit:disabled { border-color: var(--c-gray); color: var(--c-gray); }
 
+
+/* ===== SPECIAL ===== */
+.special { position: relative; padding: 320px 0; }
+
+.special__title {
+  font: 400 120px/100% var(--font-main);   /* 2 строки × 120 = 240, как в Фигме */
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 90px;
+  /* заголовок шире контейнера — дышит на весь экран */
+  width: 99vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.special__cols {
+  display: flex; justify-content: center; align-items: flex-start; gap: 120px;
+  font-family: var(--font-mono);
+  font-size: 14px;               /* «Отправка из порта Измир» и «С 29.09…» */
+  line-height: 150%;
+}
+
+.special__text { max-width: 340px; }
+.special__text p { line-height: 150%; margin-bottom: 24px; }
+
+.special__link { font-size: 18px; }        /* «Свяжитесь с нашим менеджером…» */
+
+
+
+
+
+
+
+
+
 /* ===== ТУРЦИЯ: вертикальное раскрытие ===== */
 .media { position: relative; background: #101010; }   /* всегда тёмная, без белых дыр */
 
@@ -252,45 +288,53 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 }
 .media__play:hover { transform: translate(-50%, -50%) scale(1.1); }
 
-/* ===== SPECIAL ===== */
-.special { position: relative; padding: 320px 0px 320px; }
-.special__title { font: 400 68px/1.15 var(--font-main); text-align: center; margin-bottom: 90px; }
-.special__cols {
-  display: flex; justify-content: center; align-items: flex-start; gap: 120px;
-  font-family: var(--font-mono); font-size: 12px;
-}
-.special__text { max-width: 340px; }
-.special__text p { line-height: 1.7; margin-bottom: 24px; }
+
 
 /* ===== УСЛУГИ ===== */
-.services__grid { display: grid; grid-template-columns: 1fr 1fr; max-width: 960px; margin: 0 auto; }
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;      
+}
 .services__item {
-  display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  padding: 36px 24px;
+  position: relative;                  
+  display: flex; align-items: center;
+  padding: 56px 40px 56px 60px;        
   transition: background .3s;
 }
-.services__item h3 { font: 400 38px/1.2 var(--font-main); }
+.services__item h3 { font: 400 60px/1.2 var(--font-main); letter-spacing: -0.01em; }
 .services__item:nth-child(even) { border-left: 1px solid rgb(244 178 35 / .6); }
 .services__item:not(:nth-last-child(-n+2)) { border-bottom: 1px solid rgb(244 178 35 / .6); }
 .services__item:hover { background: var(--c-yellow); }
+
 .services__desc {
-  max-width: 180px;
-  font-family: var(--font-mono); font-size: 10px; line-height: 1.6;
+  position: absolute; right: 40px; top: 50%; transform: translateY(-50%);
+  width: 140px;                        /* при 14px «Импорт, экспорт,» встаёт ровно */
+  font-family: var(--font-mono); font-size: 14px; line-height: 150%;
   opacity: 0; transition: opacity .3s;
 }
 .services__item:hover .services__desc { opacity: 1; }
 
+
+
 /* ===== ОРГАНИЗАЦИИ ===== */
-.orgs { position: relative; height: 650px; overflow: hidden; }
+.orgs { position: relative; height: 923px; overflow: hidden; }
 .orgs__img { position: absolute; inset: 0; width: 100%; height: 922px; object-fit: cover; object-position: center 0%; }
 .orgs__inner { position: relative; height: 100%; }
 .orgs__content {
   height: 100%;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 48px;
-  text-align: center; color: #fff; padding: 0 12%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 48px;
+  text-align: center; color: #fff;
+  padding: 0 40px;                 /* было 12% — оно съедало ширину и ломало строки */
 }
-.orgs__text { font: 400 36px/1.45 var(--font-main); max-width: 900px; }
-.orgs__more { font-family: var(--font-mono); font-size: 12px; }
+
+.orgs__text {
+  font: 400 60px/60px var(--font-main);   /* line-height 60px = 100%, как в Фигме */
+  letter-spacing: -0.01em;                /* те самые −1% */
+  max-width: 1256px;       
+  margin-top: 211px;
+}
+.orgs__more { font-family: var(--font-mono); font-size: 18px; }
 .orgs__more a { text-decoration: underline; }
 
 
@@ -306,11 +350,12 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 }
 
 /* карточки */
-.cases__row { display: flex; justify-content: center; gap: 16px; }
+.cases__row { display: flex; justify-content: center; gap: 32px; }
 .case {
   position: relative;
-  width: 296px;
-  flex: 0 0 296px;
+  width: 400px;
+  flex: 0 0 340px;
+  transition: transform .6s ease;    /* ← додавить к тому, что есть */
 }
 .case__box {
   position: relative;            /* фотка живёт внутри коробки, а не в секции */
@@ -328,22 +373,28 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 }
 .case:hover .case__photo { opacity: 1; }
 .case__name {
-  font: 400 16px var(--font-main);
+  font: 400 30px var(--font-main);
   transition: opacity .6s ease, transform .6s ease;
 }
 .case:hover .case__name { color: var(--c-yellow); text-decoration: underline; }
 
 /* текстовые фреймы — сначала скрыты */
 .case-detail {
-  position: absolute; left: 0; right: 0; top: 0;
+  position: absolute; top: 0;
+  left: -32px; right: -32px;      /* ← колонка 360px, шире карточки, как в макете */
   display: flex; flex-direction: column;
-  opacity: 0; transform: scale(.85);          /* ← невидимы, пока не доскроллил */
+  opacity: 0; transform: scale(.85);
   transition: opacity .6s ease, transform .6s ease;
   pointer-events: none;
 }
-.case-detail__icon { width: 28px; height: 28px; object-fit: contain; margin-bottom: 56px; }
-.case-detail h3 { font: 400 22px var(--font-main); margin-bottom: 24px; }
-.case-detail p { font-family: var(--font-mono); font-size: 12px; line-height: 1.7; margin-bottom: 16px; }
+.case-detail__icon { width: 24px; height: 24px; object-fit: contain; margin-bottom: 40px; }
+.case-detail h3 { font: 400 24px var(--font-main); margin-bottom: 20px; }
+.case-detail p {
+  font-family: var(--font-mono);
+  font-size: 12px;                /* ← как в Фигме, текст встаёт в 7–8 строк */
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
 .case-detail__logo { width: 48px; margin-top: 24px; }
 .cases__more {
   position: absolute; right: -80px; top: 55%;  /* ← выступает справа, как в макете */
@@ -363,6 +414,10 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
   color: var(--c-yellow); text-decoration: underline;
 }
 
+/* в текстовом режиме колонки разъезжаются, как в макете */
+.cases__stage.is-text .case:first-child { transform: translateX(-48px); }
+.cases__stage.is-text .case:last-child  { transform: translateX(48px); }
+
 /* ===== НОВОСТИ ===== */
 .news__list { max-width: 660px; margin: 0 auto; }
 .news-item { border-bottom: 1px solid var(--c-gray); }
@@ -377,9 +432,9 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-mono); font-size: 8px;
 }
-.news-item__meta { font-family: var(--font-mono); font-size: 10px; margin-bottom: 8px; }
+.news-item__meta { font-family: var(--font-mono); font-size: 14px; margin-bottom: 8px; }
 .news-item__meta span { color: var(--c-gray); }
-.news-item__head h3 { font-family: var(--font-mono); font-size: 14px; font-weight: 400; line-height: 1.5; }
+.news-item__head h3 { font-family: var(--font-mono); font-size: 24px; font-weight: 400; line-height: 1.5; }
 .news-item__arrow { transition: transform .3s; }
 .news-item.is-open .news-item__arrow { transform: rotate(180deg); }
 .news-item__body { max-height: 0; overflow: hidden; transition: max-height .4s; }
@@ -412,15 +467,18 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 .offices { padding: 140px 0 60px; }
 .offices__row {
   display: flex; justify-content: center; gap: 90px;
-  font-family: var(--font-mono); font-size: 12px; line-height: 1.6;
+  font-family: var(--font-mono); font-size: 18px; line-height: 1.6;
 }
 .office { width: 210px; }
 .office__pin { width: 24px; margin-bottom: 16px; }
 .office a { display: inline-block; margin-top: 16px; }
+
+
+
 .footer {
   margin: 140px auto 0; max-width: 810px;
   display: flex; gap: 120px;
-  font-family: var(--font-mono); font-size: 14px; line-height: 130%;
+  font-family: var(--font-mono); font-size: 16px; line-height: 130%;
 }
 .footer__links { display: flex; flex-direction: column; gap: 4px; }
 
