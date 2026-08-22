@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -35,7 +35,7 @@
       </a>
 
       <div class="header__right">
-        <p class="header__tagline">Аривист. 30+ лет<br>в международной логистике</p>
+        <p class="header__tagline">Аривист. 30+ лет<br>в международной<br>логистике</p>
         <a class="header__phone" href="tel:+78007754243">8 800 775 4243</a>
         <div class="header__lang" data-dropdown>
           <button class="header__lang-btn" type="button" aria-expanded="false">RU <span class="arrow">↓</span></button>
@@ -194,12 +194,12 @@
       </a>
     </section>
 
-      <!-- ====== 2. SPECIAL ====== -->
+    <!-- ====== 2. SPECIAL ====== -->
     <section class="special" id="special">
       <div class="container">
-        <!-- левое меню разделов -->
-        <nav class="side-nav" aria-label="Разделы страницы">
-          <a href="#special" class="is-active">Special</a>
+        <!-- левое залипшее меню разделов -->
+        <nav class="side-nav is-hidden" aria-label="Разделы страницы">
+          <a href="#special">Special</a>
           <a href="#services">Услуги</a>
           <a href="#orgs">Организации</a>
           <a href="#cases">Кейсы</a>
@@ -226,31 +226,26 @@
 
 
 
-    <!-- ====== 3. ВИДЕО (пока статика) ====== -->
-    <section class="media">
+
+  <!-- ====== 3. ВИДЕО (пока статика) ====== -->
+<section class="media">
+  <div class="media__pin">
+    <div class="media__stage">
       <img class="media__img" src="img/castle.jpg" alt="Стамбул, Айя-София">
       <button class="media__play" type="button" aria-label="Смотреть видео">
         <svg width="48" height="48" viewBox="0 0 48 48">
           <path d="M16 10l24 14-24 14z" fill="#fff" />
         </svg>
       </button>
-    </section>
-
+    </div>
+  </div>
+</section>
 
 
 
     <!-- ====== 4. УСЛУГИ ====== -->
     <section class="services" id="services">
       <div class="container">
-        <nav class="side-nav" aria-label="Разделы страницы">
-          <a href="#special">Special</a>
-          <a href="#services" class="is-active">Услуги</a>
-          <a href="#orgs">Организации</a>
-          <a href="#cases">Кейсы</a>
-          <a href="#news">Новости</a>
-          <a href="#clients">Клиенты</a>
-          <a href="#offices">Офисы</a>
-        </nav>
 
         <div class="services__grid">
           <a class="services__item" href="#">
@@ -287,15 +282,7 @@
       <img class="orgs__img" src="img/people.jpg" alt="Конференция ВЭД">
 
       <div class="container orgs__inner">
-        <nav class="side-nav" aria-label="Разделы страницы">
-          <a href="#special">Special</a>
-          <a href="#services">Услуги</a>
-          <a href="#orgs" class="is-active">Организации</a>
-          <a href="#cases">Кейсы</a>
-          <a href="#news">Новости</a>
-          <a href="#clients">Клиенты</a>
-          <a href="#offices">Офисы</a>
-        </nav>
+
 
         <div class="orgs__content">
           <p class="orgs__text">ГК Аривист входит в состав Гильдии профессиональных участников ВЭД «Гермес», Деловой
@@ -305,225 +292,189 @@
       </div>
     </section>
 
-<!-- ====== 6. КЕЙСЫ ====== -->
-<section class="cases" id="cases">
-  <div class="container">
-    <div class="cases__top">
-    <nav class="side-nav" aria-label="Разделы страницы">
-      <a href="#special">Special</a>
-      <a href="#services">Услуги</a>
-      <a href="#orgs">Организации</a>
-      <a href="#cases" class="is-active">Кейсы</a>
-      <a href="#news">Новости</a>
-      <a href="#clients">Клиенты</a>
-      <a href="#offices">Офисы</a>
-    </nav>
+    <!-- ====== 6. КЕЙСЫ ====== -->
+    <section class="cases" id="cases">
+      <div class="cases__pin">
+        <div class="cases__stage">
+          <div class="container">
+            <h2 class="cases__title">Кейсы</h2>
+            <div class="cases__row">
 
-    <h2 class="cases__title">Кейсы</h2>
+              <article class="case">
+                <div class="case__box">
+                  <img class="case__icon" src="img/svg/time.svg" alt="">
+                  <img class="case__photo" src="img/people.jpg" alt="">
+                </div>
+                <span class="case__name">Счёт на часы</span>
+                <div class="case-detail">
+                  <img class="case-detail__icon" src="img/svg/time.svg" alt="">
+                  <h3>Счёт на часы</h3>
+                  <p>ГК АРИВИСТ успешно справилась с таможенным оформлением 17 000 суточных индюшат, привезённых из
+                    Германии. Основная задача состояла в том, чтобы организовать и провести процедуру таможенного
+                    оформления и прохождение ветеринарного контроля максимально быстро. Кроме того, индюшат нужно было
+                    кормить каждые два часа!</p>
+                  <p>Перед отправкой специалисты компании проконсультировали собственника...</p>
+                </div>
+              </article>
 
-    <div class="cases__row">
-      <a class="case" href="#">
-        <div class="case__box">
-          <img class="case__icon" src="img/svg/time.svg" alt="">
-          <img class="case__photo" src="img/4.jpg" alt="">
-        </div>
-        <h3 class="case__name">Счёт на часы</h3>
-      </a>
+              <article class="case">
+                <div class="case__box">
+                  <img class="case__icon" src="img/svg/circle.svg" alt="">
+                  <img class="case__photo" src="img/railway.jpg" alt="">
+                </div>
+                <span class="case__name">Мука на экспорт</span>
+                <div class="case-detail">
+                  <img class="case-detail__icon" src="img/svg/circle.svg" alt="">
+                  <h3>Мука на экспорт</h3>
+                  <p>Сотрудники Южного поста ГК АРИВИСТ в рамках Всемирной продовольственной программы ООН оформили на
+                    экспорт более 3 тыс. тонн пшеничной муки. Мука загружалась в вагоны на территории хлебокомбината в
+                    Санкт-Петербурге и следовала ж/д путями до Таджикистана.</p>
+                  <p>И в этот раз ГК АРИВИСТ успешно справилась с таможенным оформлением жизненно необходимого груза, и
+                    мы рады, что стали частью такого проекта.</p>
+                  <img class="case-detail__logo" src="img/svg/wfp.svg" alt="WFP">
+                </div>
+              </article>
 
-      <a class="case" href="#">
-        <div class="case__box">
-          <img class="case__icon" src="img/svg/circle.svg" alt="">
-          <img class="case__photo" src="img/railway.jpg" alt="">
-        </div>
-        <h3 class="case__name">Мука на экспорт</h3>
-      </a>
+              <article class="case">
+                <div class="case__box">
+                  <img class="case__icon" src="img/svg/umbrella.svg" alt="">
+                  <img class="case__photo" src="img/non.jpg" alt="">
+                </div>
+                <span class="case__name">Почувствовать себя пилотом</span>
+                <div class="case-detail">
+                  <img class="case-detail__icon" src="img/svg/umbrella.svg" alt="">
+                  <h3>Почувствовать себя пилотом</h3>
+                  <p>В ноябре 2014 г. ГК АРИВИСТ успешно осуществила доставку и таможенное оформление Boeing 737NG,
+                    построенного на базе авиатренажёров, используемых для обучения и тренировки пилотов гражданской
+                    авиации.</p>
+                  <p>Тренажёр был сконструирован и собран в Италии. Именно оттуда специалисты ГК доставили в Россию, а
+                    затем провели таможенное оформление необычного...</p>
+                  <a href="#" class="cases__more">Ещё</a>
+                </div>
+              </article>
 
-      <a class="case" href="#">
-        <div class="case__box">
-          <img class="case__icon" src="img/svg/umbrella.svg" alt="">
-          <img class="case__photo" src="img/non.jpg" alt="">
-        </div>
-        <h3 class="case__name">Почувствовать себя пилотом</h3>
-      </a>
-    </div>
-</div>
-    <!-- продолжение кейсов: тексты -->
-    <div class="cases__bottom">
-      <nav class="side-nav" aria-label="Разделы страницы">
-        <a href="#special">Special</a>
-        <a href="#services">Услуги</a>
-        <a href="#orgs">Организации</a>
-        <a href="#cases" class="is-active">Кейсы</a>
-        <a href="#news">Новости</a>
-        <a href="#clients">Клиенты</a>
-        <a href="#offices">Офисы</a>
-      </nav>
-
-      <div class="cases__details">
-        <article class="case-detail">
-          <img class="case-detail__icon" src="img/svg/time.svg" alt="">
-          <h3>Счёт на часы</h3>
-          <p>ГК АРИВИСТ успешно справилась с таможенным оформлением 17 000 суточных индюшат, привезенных из Германии. Основная задача состояла в том, чтобы организовать и провести процедуру таможенного оформления и прохождение ветеринарного контроля, максимально быстро. Кроме того, индюшат нужно было кормить каждые два часа!</p>
-          <p>Перед отправкой специалисты компании проконсультировали собственника…</p>
-        </article>
-
-        <article class="case-detail">
-          <img class="case-detail__icon" src="img/svg/circle.svg" alt="">
-          <h3>Мука на экспорт</h3>
-          <p>Сотрудники Южного поста ГК АРИВИСТ в рамках Всемирной продовольственной программы ООН оформили на экспорт более 3 тыс. тонн пшеничной муки. Мука загружалась в вагоны на территории хлебокомбината в Санкт-Петербурге и следовала ж/д путями до Таджикистана. И в этот раз ГК АРИВИСТ успешно справилась с таможенным оформлением жизненно необходимого груза, и мы рады, что стали частью такого проекта.</p>
-          <img class="case-detail__logo" src="img/svg/wfp.svg" alt="Всемирная продовольственная программа ООН">
-        </article>
-
-        <article class="case-detail">
-          <img class="case-detail__icon" src="img/svg/umbrella.svg" alt="">
-          <h3>Почувствовать себя пилотом</h3>
-          <p>В ноябре 2014 г. ГК АРИВИСТ успешно осуществила доставку и таможенное оформление Boeing 737NG, построенного на базе авиатренажеров, используемых для обучения и тренировки пилотов гражданской авиации.</p>
-          <p>Тренажер был сконструирован и собран в Италии. Именно оттуда специалисты ГК доставили в Россию, а затем провели таможенное оформление необычного…</p>
-        </article>
-
-        <a class="cases__more" href="#">Ещё</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== 7. НОВОСТИ ====== -->
-<section class="news" id="news">
-  <div class="container">
-    <nav class="side-nav" aria-label="Разделы страницы">
-      <a href="#special">Special</a>
-      <a href="#services">Услуги</a>
-      <a href="#orgs">Организации</a>
-      <a href="#cases">Кейсы</a>
-      <a href="#news" class="is-active">Новости</a>
-      <a href="#clients">Клиенты</a>
-      <a href="#offices">Офисы</a>
-    </nav>
-
-    <h2 class="news__title">Новости</h2>
-
-    <div class="news__list">
-      <article class="news-item">
-        <button class="news-item__head" type="button">
-          <img class="news-item__thumb" src="img/4.jpg" alt="">
-          <div class="news-item__info">
-            <p class="news-item__meta">27 мая 2026 <span>#события</span></p>
-            <h3>АРИВИСТ ГК на Заседании совместной рабочей группы Общественного совета при ФТС и Общественного совета при ФНС</h3>
+            </div>
           </div>
-          <span class="news-item__arrow">↓</span>
-        </button>
-        <div class="news-item__body">
-          <p>Давно выяснено, что при оценке дизайна и композиции чтение осмысленного текста мешает сосредоточиться. Место под реальный текст новости о заседании рабочей группы.</p>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="news-item">
-        <button class="news-item__head" type="button">
-          <span class="news-item__thumb">Вебинар</span>
-          <div class="news-item__info">
-            <p class="news-item__meta">25 мая 2026 <span>#новости</span></p>
-            <h3>Валютные ограничения в 2026 году: как бизнесу проводить сделки без рисков?</h3>
+    <!-- ====== 7. НОВОСТИ ====== -->
+    <section class="news" id="news">
+      <div class="container">
+
+
+        <h2 class="news__title">Новости</h2>
+
+        <div class="news__list">
+          <article class="news-item">
+            <button class="news-item__head" type="button">
+              <img class="news-item__thumb" src="img/4.jpg" alt="">
+              <div class="news-item__info">
+                <p class="news-item__meta">27 мая 2026 <span>#события</span></p>
+                <h3>АРИВИСТ ГК на Заседании совместной рабочей группы Общественного совета при ФТС и Общественного
+                  совета при ФНС</h3>
+              </div>
+              <span class="news-item__arrow">↓</span>
+            </button>
+            <div class="news-item__body">
+              <p>Давно выяснено, что при оценке дизайна и композиции чтение осмысленного текста мешает сосредоточиться.
+                Место под реальный текст новости о заседании рабочей группы.</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <button class="news-item__head" type="button">
+              <span class="news-item__thumb">Вебинар</span>
+              <div class="news-item__info">
+                <p class="news-item__meta">25 мая 2026 <span>#новости</span></p>
+                <h3>Валютные ограничения в 2026 году: как бизнесу проводить сделки без рисков?</h3>
+              </div>
+              <span class="news-item__arrow">↓</span>
+            </button>
+            <div class="news-item__body">
+              <p>Давно выяснено, что при оценке дизайна и композиции чтение осмысленного текста мешает сосредоточиться.
+                Место под реальный текст новости о вебинаре.</p>
+            </div>
+          </article>
+        </div>
+
+        <a class="news__all" href="#">Все новости</a>
+      </div>
+    </section>
+
+
+    <!-- ====== 8. КЛИЕНТЫ ====== -->
+    <section class="clients" id="clients">
+      <div class="container">
+
+
+        <h2 class="clients__title">С нами работают</h2>
+
+        <div class="clients__grid">
+          <div class="client">
+            <img class="client__logo" src="img/svg/heli_v1.svg" alt="HELI">
+            <img class="client__logo client__logo--hover" src="img/svg/heli_v2.svg" alt="">
           </div>
-          <span class="news-item__arrow">↓</span>
-        </button>
-        <div class="news-item__body">
-          <p>Давно выяснено, что при оценке дизайна и композиции чтение осмысленного текста мешает сосредоточиться. Место под реальный текст новости о вебинаре.</p>
+          <div class="client">
+            <img class="client__logo" src="img/svg/aquaphor_v1.svg" alt="АКВАФОР">
+            <img class="client__logo client__logo--hover" src="img/svg/aquaphor_v2.svg" alt="">
+          </div>
+          <div class="client">
+            <img class="client__logo" src="img/svg/felo_v1.svg" alt="felo">
+            <img class="client__logo client__logo--hover" src="img/svg/felo_v2.svg" alt="">
+          </div>
+          <div class="client">
+            <img class="client__logo" src="img/svg/ashan_v1.svg" alt="Ашан">
+            <img class="client__logo client__logo--hover" src="img/svg/ashan_v2.svg" alt="">
+          </div>
+          <div class="client">
+            <img class="client__logo" src="img/svg/felo_v1.svg" alt="felo">
+            <img class="client__logo client__logo--hover" src="img/svg/felo_v2.svg" alt="">
+          </div>
+          <div class="client">
+            <img class="client__logo" src="img/svg/heli_v1.svg" alt="HELI">
+            <img class="client__logo client__logo--hover" src="img/svg/heli_v2.svg" alt="">
+          </div>
         </div>
-      </article>
-    </div>
-
-    <a class="news__all" href="#">Все новости</a>
-  </div>
-</section>
-
-
-<!-- ====== 8. КЛИЕНТЫ ====== -->
-<section class="clients" id="clients">
-  <div class="container">
-    <nav class="side-nav" aria-label="Разделы страницы">
-      <a href="#special">Special</a>
-      <a href="#services">Услуги</a>
-      <a href="#orgs">Организации</a>
-      <a href="#cases">Кейсы</a>
-      <a href="#news">Новости</a>
-      <a href="#clients" class="is-active">Клиенты</a>
-      <a href="#offices">Офисы</a>
-    </nav>
-
-    <h2 class="clients__title">С нами работают</h2>
-
-    <div class="clients__grid">
-      <div class="client">
-        <img class="client__logo" src="img/svg/heli_v1.svg" alt="HELI">
-        <img class="client__logo client__logo--hover" src="img/svg/heli_v2.svg" alt="">
       </div>
-      <div class="client">
-        <img class="client__logo" src="img/svg/aquaphor_v1.svg" alt="АКВАФОР">
-        <img class="client__logo client__logo--hover" src="img/svg/aquaphor_v2.svg" alt="">
-      </div>
-      <div class="client">
-        <img class="client__logo" src="img/svg/felo_v1.svg" alt="felo">
-        <img class="client__logo client__logo--hover" src="img/svg/felo_v2.svg" alt="">
-      </div>
-      <div class="client">
-        <img class="client__logo" src="img/svg/ashan_v1.svg" alt="Ашан">
-        <img class="client__logo client__logo--hover" src="img/svg/ashan_v2.svg" alt="">
-      </div>
-      <div class="client">
-        <img class="client__logo" src="img/svg/felo_v1.svg" alt="felo">
-        <img class="client__logo client__logo--hover" src="img/svg/felo_v2.svg" alt="">
-      </div>
-      <div class="client">
-        <img class="client__logo" src="img/svg/heli_v1.svg" alt="HELI">
-        <img class="client__logo client__logo--hover" src="img/svg/heli_v2.svg" alt="">
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
-<!-- ====== 9. ОФИСЫ + ПОДВАЛ ====== -->
-<section class="offices" id="offices">
-  <div class="container">
-    <nav class="side-nav" aria-label="Разделы страницы">
-      <a href="#special">Special</a>
-      <a href="#services">Услуги</a>
-      <a href="#orgs">Организации</a>
-      <a href="#cases">Кейсы</a>
-      <a href="#news">Новости</a>
-      <a href="#clients">Клиенты</a>
-      <a href="#offices" class="is-active">Офисы</a>
-    </nav>
+    <!-- ====== 9. ОФИСЫ + ПОДВАЛ ====== -->
+    <section class="offices" id="offices">
+      <div class="container">
 
-    <h2 class="offices__title">Офисы</h2>
 
-    <div class="offices__row">
-      <div class="office">
-        <img class="office__pin office__pin--mono" src="img/svg/pin_spb.svg" alt="">
-        <p>Санкт-Петербург<br>ул. Галсальская, 5</p>
-      </div>
-      <div class="office">
-        <img class="office__pin office__pin--mono" src="img/svg/pin_msk.svg" alt="">
-        <p>Москва<br>ул. Мясницкая, 40, стр. 1</p>
-        <a href="tel:+74952294277">+7 (495) 229-42-77</a>
-      </div>
-      <div class="office">
-        <img class="office__pin" src="img/svg/pin_stb.svg" alt="">
-        <p>Стамбул<br>Saray Mah. Küçüksu Cad.<br>Antasya Sitesi, 64B</p>
-      </div>
-    </div>
+        <h2 class="offices__title">Офисы</h2>
 
-    <a class="offices__all" href="#">Все офисы</a>
+        <div class="offices__row">
+          <div class="office">
+            <img class="office__pin office__pin--mono" src="img/svg/pin_spb.svg" alt="">
+            <p>Санкт-Петербург<br>ул. Галсальская, 5</p>
+          </div>
+          <div class="office">
+            <img class="office__pin office__pin--mono" src="img/svg/pin_msk.svg" alt="">
+            <p>Москва<br>ул. Мясницкая, 40, стр. 1</p>
+            <a href="tel:+74952294277">+7 (495) 229-42-77</a>
+          </div>
+          <div class="office">
+            <img class="office__pin" src="img/svg/pin_stb.svg" alt="">
+            <p>Стамбул<br>Saray Mah. Küçüksu Cad.<br>Antasya Sitesi, 64B</p>
+          </div>
+        </div>
 
-    <footer class="footer">
-      <p>© 2026</p>
-      <div class="footer__links">
-        <a href="#">Политика конфиденциальности</a>
-        <a href="#">Правила обработки персональных данных</a>
+        <a class="offices__all" href="#">Все офисы</a>
+
+        <footer class="footer">
+          <p>© 2026</p>
+          <div class="footer__links">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Правила обработки персональных данных</a>
+          </div>
+        </footer>
       </div>
-    </footer>
-  </div>
-</section>
+    </section>
 
 
 

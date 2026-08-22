@@ -39,14 +39,22 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 .special .container, .services .container, .news .container,
 .clients .container, .offices .container { position: relative; }
 
-/* левое меню разделов */
+/* левое залипшее меню разделов */
 .side-nav {
-  position: absolute; left: 40px; top: 50%; transform: translateY(-50%);
+  position: fixed;
+  left: max(40px, calc((100vw - 1400px) / 2 + 40px));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
   display: flex; flex-direction: column; gap: 8px;
-  font-family: var(--font-mono); font-size: 12px;
+  font-family: var(--font-mono);
+  font-size: 14px; line-height: 130%;
+  transition: opacity .4s;
 }
+.side-nav.is-hidden { opacity: 0; pointer-events: none; }
 .side-nav a { color: var(--c-gray); }
 .side-nav a.is-active { color: var(--c-black); }
+.side-nav.on-dark a.is-active { color: #fff; }
 
 /* заголовки секций */
 .cases__title, .news__title, .clients__title {
@@ -70,29 +78,42 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 
 /* ===== ШАПКА ===== */
 .header {
-  position: absolute; top: 0; left: 0; right: 0; z-index: 100;
+  position: absolute; top: 15px; left: 0; right: 0; z-index: 100;
   background: transparent;
   color: var(--c-hero);
-  font-family: var(--font-mono); font-size: 14px;
+  font-family: var(--font-mono); font-size: 20px;
+  line-height: 130%;
 }
+
+/* верхняя строка: три зоны в потоке, лого держит центр гридом */
 .header__top {
   display: grid; grid-template-columns: 1fr auto 1fr;
   align-items: center; gap: 24px;
-  min-height: 76px;
+  min-height: 110px;
   border-bottom: 1px solid currentColor;
 }
-.header__left, .header__right { display: flex; align-items: center; gap: 24px; }
-.header__right { justify-content: flex-end; }
-.header__burger { width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+
+.header__left { display: flex; align-items: center; gap: 24px; }
+
+/* правая группа: прижата вправо, без абсолюта */
+.header__right {
+  display: flex; align-items: center; justify-content: flex-end;
+}
+
+.header__burger { width: 56px; height: 26px; display: flex; flex-direction: column; justify-content: space-between; }
 .header__burger span { height: 2px; background: currentColor; }
 .header__search { display: flex; }
+
+/* лого — обычный элемент грида, центр */
 .header__logo { display: flex; transition: transform .5s ease; }
 .header__logo:hover { transform: scale(1.1); }
-.header__logo-icon { width: 44px; height: 44px; }
+.header__logo-icon { width: 40px; height: 40px; }
 .header__logo:hover .header__logo-icon { animation: spin 9s linear infinite; }
 @keyframes spin { to { transform: rotate(1turn); } }
-.header__tagline { font-size: 12px; line-height: 1.35; }
-.header__phone { font-size: 16px; white-space: nowrap; }
+
+.header__tagline { font-size: 14px; line-height: 130%; margin-right:-40px ; }
+.header__phone { font-size: 20px; white-space: nowrap; margin-left: 140px; margin-right: -20px; }  /* ← твоя ручка */
+.header__lang { white-space: nowrap; margin-left: 70px; }                     /* ← твоя ручка */
 
 /* языки и услуги — единый паттерн дропдауна */
 [data-dropdown] { position: relative; }
@@ -110,13 +131,18 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
   transition: opacity .25s;
 }
 [data-dropdown] ul a { display: block; padding: 6px 16px; white-space: nowrap; }
-.header__lang ul { left: auto; right: 0; text-align: center; }
 
+/* нижняя строка: всё в потоке, заявка — средний из трёх */
+.header__nav {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 24px;
+  min-height: 27px;
+}
+.header__nav [data-modal-open="request"] { margin-left: 524px; }
 
-.header__nav { display: flex; justify-content: space-between; align-items: center; min-height: 56px; }
-.header__nav-btn, .header__nav-link { position: relative; padding: 18px 0; }
+.header__nav-btn, .header__nav-link { position: relative; padding: 0; }
 .header__nav-btn::after, .header__nav-link::after {
-  content: ""; position: absolute; left: 0; bottom: 12px;
+  content: ""; position: absolute; left: 0; bottom: -6px;
   height: 1px; width: 0; background: currentColor;
   transition: width .3s ease;
 }
@@ -195,14 +221,39 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 [data-theme="dark"] .modal__submit { border-color: var(--c-white); color: var(--c-white); }
 [data-theme="dark"] .modal__submit:disabled { border-color: var(--c-gray); color: var(--c-gray); }
 
-/* ===== ВИДЕО (ПОКА СТАТИКА) ===== */
-.media { position: relative; height: 80vh; overflow: hidden; background: var(--c-black); }
-.media__img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
-.media__play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); transition: transform .3s; }
+/* ===== ТУРЦИЯ: вертикальное раскрытие ===== */
+.media { position: relative; background: #101010; }   /* всегда тёмная, без белых дыр */
+
+.media__pin { height: 160vh; }
+
+.media__stage {
+  position: sticky; top: 0;
+  height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  background: #101010;             /* темнота вместо белого фона */
+}
+
+.media__img {
+  width: 100%;
+  height: 20%;                     /* ручка: стартовая «щель» */
+  object-fit: cover;
+  object-position: center 42%;
+  /* перья сверху и снизу — фото вытаивает из темноты, а не режется */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+}
+
+.media__play {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: transform .3s;
+}
 .media__play:hover { transform: translate(-50%, -50%) scale(1.1); }
 
 /* ===== SPECIAL ===== */
-.special { position: relative; padding: 140px 0 160px; }
+.special { position: relative; padding: 320px 0px 320px; }
 .special__title { font: 400 68px/1.15 var(--font-main); text-align: center; margin-bottom: 90px; }
 .special__cols {
   display: flex; justify-content: center; align-items: flex-start; gap: 120px;
@@ -241,40 +292,71 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 .orgs__text { font: 400 36px/1.45 var(--font-main); max-width: 900px; }
 .orgs__more { font-family: var(--font-mono); font-size: 12px; }
 .orgs__more a { text-decoration: underline; }
-.orgs .side-nav a.is-active { color: #fff; }
 
-/* ===== КЕЙСЫ ===== */
-.cases { padding: 120px 0 160px; }
-.cases__top, .cases__bottom { position: relative; }
-.cases__bottom { margin-top: 200px; }
-.cases .side-nav { left: 0; }
+
+/* ====== КЕЙСЫ: залипший экран со сменой фреймов ====== */
+.cases {  padding-top: 110px; }
+
+/* дорожка скролла: пока она едет, экран залипает */
+.cases__pin { height: 260vh; }
+.cases__stage {
+  position: sticky; top: 0;
+  min-height: 100vh;
+  display: flex; align-items: center;
+}
+
+/* карточки */
 .cases__row { display: flex; justify-content: center; gap: 16px; }
-.case { width: 160px; }
+.case {
+  position: relative;
+  width: 296px;
+  flex: 0 0 296px;
+}
 .case__box {
-  position: relative; height: 160px;
+  position: relative;            /* фотка живёт внутри коробки, а не в секции */
+  aspect-ratio: 1;               /* квадрат 296×296 */
   background: var(--c-light);
   display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
+  overflow: hidden;              /* обрезает фотку и её зум по краям плитки */
   margin-bottom: 16px;
+  transition: opacity .6s ease, transform .6s ease;
 }
-.case__icon { width: 32px; }
+.case__icon { width: 56px; }
 .case__photo {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
   opacity: 0; transition: opacity .3s;
 }
 .case:hover .case__photo { opacity: 1; }
-.case__name { font: 400 16px var(--font-main); }
+.case__name {
+  font: 400 16px var(--font-main);
+  transition: opacity .6s ease, transform .6s ease;
+}
 .case:hover .case__name { color: var(--c-yellow); text-decoration: underline; }
-.cases__details {
-  position: relative;
-  max-width: 1060px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px;
-  align-items: start;
+
+/* текстовые фреймы — сначала скрыты */
+.case-detail {
+  position: absolute; left: 0; right: 0; top: 0;
+  display: flex; flex-direction: column;
+  opacity: 0; transform: scale(.85);          /* ← невидимы, пока не доскроллил */
+  transition: opacity .6s ease, transform .6s ease;
+  pointer-events: none;
 }
 .case-detail__icon { width: 28px; height: 28px; object-fit: contain; margin-bottom: 56px; }
 .case-detail h3 { font: 400 22px var(--font-main); margin-bottom: 24px; }
 .case-detail p { font-family: var(--font-mono); font-size: 12px; line-height: 1.7; margin-bottom: 16px; }
 .case-detail__logo { width: 48px; margin-top: 24px; }
+.cases__more {
+  position: absolute; right: -80px; top: 55%;  /* ← выступает справа, как в макете */
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--c-yellow); text-decoration: underline;
+}
+
+/* доскроллил до середины дорожки — плитки тают, тексты раскрываются */
+.cases__stage.is-text .case__box,
+.cases__stage.is-text .case__name { opacity: 0; transform: scale(.85); pointer-events: none; }
+.cases__stage.is-text .case-detail { opacity: 1; transform: scale(1); pointer-events: auto; }
+
+
 .cases__more {
   position: absolute; right: -80px; top: 55%;
   font-family: var(--font-mono); font-size: 12px;
@@ -338,7 +420,7 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
 .footer {
   margin: 140px auto 0; max-width: 810px;
   display: flex; gap: 120px;
-  font-family: var(--font-mono); font-size: 10px;
+  font-family: var(--font-mono); font-size: 14px; line-height: 130%;
 }
 .footer__links { display: flex; flex-direction: column; gap: 4px; }
 
@@ -349,7 +431,11 @@ body { font-family: var(--font-main); color: var(--c-black); background: var(--c
   z-index: 150;
   width: 48px; height: 48px;
   display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;    /* на первом экране не видна */
+  transition: opacity .3s;
 }
+
+.theme-toggle.is-visible { opacity: 1; pointer-events: auto; }
 
 /* ===== АДАПТИВ-ЗАГОТОВКИ ===== */
 @media (max-width: 1024px) {
